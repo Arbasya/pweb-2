@@ -65,6 +65,62 @@ public $nama;
 ```
 Enkapsulasi adalah salah satu yang paling terpenting di dalam pemrograman berorientasi objek(OOP). karena tahap enkapsulasi lah yang menentukan pemberian hak akses pada setiap property atau method.  enkapsulasi atau encapsulation pada OOP terdiri dari 3. yaitu : Public, Private dan Protected.
 
+### Contoh Project
+
+```sh
+<?php
+class Mahasiswa
+    {
+        private $nama, $nim, $jurusan;
+
+        //Membuat encapsulasi data menjadi private 
+
+        public function setNama($nama) // function untuk set Nama
+        {
+            $this->nama = $nama;
+        }
+        public function getNama() // function untuk mendapatkan nilai variabel nama
+        {
+            return $this->nama;
+        }
+
+        public function setNim($nim) // function untuk set NIM
+        {
+            $this->nim = $nim;
+        }
+        public function getNim() // function untuk mendapatkan vilai variabel NIM
+        {
+            return $this->nim;
+        }
+
+        public function setJurusan($jurusan) // function untuk mengeset jurusan
+        {
+            $this->jurusan = $jurusan;
+        }
+        public function getJurusan() // function untuk mendapatkan nilai variabel jurusan
+        {
+            return $this->jurusan;
+        }
+
+        public function tampilkanData() // function untuk menampilkan data
+        {
+            echo "Nama : " . $this->getNama() . "</br>";
+            echo "Nim : " .$this->getNim(). "</br>";
+            echo "Jurusan : " .$this->getJurusan(). "</br>";
+        }
+    }
+    $mhs = new Mahasiswa();
+    $mhs->setNama("Arbasya");
+    $mhs->setNim("230302029");
+    $mhs->setJurusan("Teknik Mancing");
+    $mhs->tampilkanData();
+
+    //output :  Arbasya
+                230302029
+                Teknik Mancing
+?>
+```
+
 ## Inheritance
 
 ```sh
