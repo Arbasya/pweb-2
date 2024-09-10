@@ -4,6 +4,7 @@ Saya Arbasya Anandito, seorang mahasiswa Politeknik Negeri Cilacap Semester 3 Pr
 
 ## Daftar Isi
 [Jobsheet 1](https://github.com/Arbasya/pweb-2/tree/main/Jobsheet-1)
+[Jobsheet 2](https://github.com/Arbasya/pweb-2/tree/main/Jobsheet-2)
 
 ## Authors
 
