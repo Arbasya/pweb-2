@@ -45,6 +45,17 @@ public function setNip($nipBaru)
 
 Method matkulBaru untuk merubah mata kuliah menjadi data yang lebih terbaru, begitupun juga method setNIP.
 
+### Instansiasi
+```sh
+$dsn = new Dosen("Arbasya", "2300", "Alpro");
+$dsn->tampilkanDosen();
+$dsn->setNip("2400");
+$dsn->matkulBaru("Pweb");
+$dsn->tampilkanDosen();
+
+```
+Merujuk pada command diatas, kita telah menginisialisasi value object awal dosen dengan NIP 2300 dan mata kuliah Alpro, dengan method yang telah kita buat, kita dapat merubah kedua variabel tersebut menjadi 2400 dan Pweb.
+
 ### Output
 ```sh
 Nama: Arbasya
