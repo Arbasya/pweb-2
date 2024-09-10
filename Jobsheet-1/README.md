@@ -369,7 +369,7 @@ $mhs->setNama("Budi");
 $mhs->aksesFitur();
 
 // output : ini adalah fitur dosen dengan nama Pak Abdau
-            ini adlah fitur mahasiswa dengan nama Budi
+            ini adalah fitur mahasiswa dengan nama Budi
 
 ```
 
