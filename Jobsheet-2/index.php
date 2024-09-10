@@ -1,70 +1,52 @@
 <?php
-class Mahasiswa
-{
-    private $nama, $nim, $jurusan;
-
-    public function __construct($nama, $nim, $jurusan)
-    {
-    $this->nama=$nama;
-    $this->nim=$nim;
-    $this->jurusan=$jurusan;
-    }
-    public function getNama()
-    {
-        return $this->nama;
-    }
-
-    public function getNim()
-    {
-        return $this->nim;
-    }
-
-    public function getJurusan()
-    {
-        return $this->jurusan;
-    }
-
-    public function tampilkanData()
-    {
-        echo $this->getNama(). "</br>" .$this->getNim(). "</br>" .$this->getJurusan(). "</br>";
-    }
-
-}
-
 class Dosen
 {
-    private $nama, $nip, $jurusan;
 
-    public function __construct($nama, $nip, $jurusan)
+    public $nama;
+    public $nip;
+    public $matakuliah;
+
+    // Constructor untuk menginisialisasi atribut
+    public function __construct($nama, $nip, $matakuliah)
     {
         $this->nama = $nama;
         $this->nip = $nip;
-        $this->jurusan = $jurusan;
-    }
-    public function getNama()
-    {
-        return $this->nama;
+        $this->matakuliah = $matakuliah;
     }
 
-    public function getNip()
-    {
-        return $this->nip;
-    }
-
-    public function getJurusan()
-    {
-        return $this->jurusan;
-    }
-
+    // Metode untuk menampilkan data mahasiswa
     public function tampilkanDosen()
     {
-        echo $this->getNama() . "</br>" . $this->getNip() . "</br>" . $this->getJurusan() . "</br>";
+        echo "Nama: " . $this->nama . "<br>";
+        echo "NIP: " . $this->nip . "<br>";
+        echo "Matakuliah: " . $this->matakuliah . "<br>";
+    }
+
+    // Metode untuk mengubah jurusan
+    public function matkulBaru($matkulBaru)
+    {
+        $this->matakuliah = $matkulBaru;
+    }
+
+    // Metode setter untuk mengubah NIM
+    public function setNip($nipBaru)
+    {
+        $this->nip = $nipBaru;
     }
 }
 
-$mhs = new Mahasiswa("Alek", "2302028","Teknik Mancing");
-$mhs ->tampilkanData();
-
-$dsn = new Dosen("Arbasya","230302029","KomputerBisnis");
+$dsn = new Dosen("Arbasya", "2300", "Alpro");
 $dsn->tampilkanDosen();
+$dsn->setNip("2400");
+$dsn->matkulBaru("Pweb");
+$dsn->tampilkanDosen();
+
+/*output :
+Nama: Arbasya
+NIP: 2300
+Matakuliah: Alpro
+Nama: Arbasya
+NIP: 2400
+Matakuliah: Pweb
+*/
 ?>
