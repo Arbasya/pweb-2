@@ -1,5 +1,170 @@
 
 # Jobsheet 3
+
+### Inheritance
+```sh
+<?php
+// Kelas Person dengan atribut name dan metode getName()
+class Person {
+    protected $name;
+
+    public function __construct($name) {
+        $this->name = $name;
+    }
+
+    public function getNama() {
+        return $this->nama;
+    }
+}
+
+// Kelas Student mewarisi dari Person dengan tambahan atribut studentID
+class Student extends Person {
+    private $studentID;
+
+    public function __construct($name, $studentID) {
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    public function getStudentID() {
+        return $this->studentID;
+    }
+}
+```
+
+### Polymorphism
+```sh
+<?php
+// Kelas Teacher yang mewarisi dari Person dengan tambahan atribut teacherID
+class Teacher extends Person
+{
+    private $teacherID;
+
+    public function __construct($name, $teacherID)
+    {
+        parent::__construct($name);
+        $this->teacherID = $teacherID;
+    }
+
+    // Override getName() untuk Teacher
+    public function getName()
+    {
+        return "Teacher Name: " . $this->name;
+    }
+
+    public function getTeacherID()
+    {
+        return $this->teacherID;
+    }
+}
+
+// Override getName() untuk Student
+class Student extends Person
+{
+    private $studentID;
+
+    public function __construct($name, $studentID)
+    {
+        parent::__construct($name);
+        $this->studentID = $studentID;
+    }
+
+    // Override getName() untuk menampilkan format berbeda
+    public function getName()
+    {
+        return "Student Name: " . $this->name;
+    }
+
+    public function getStudentID()
+    {
+        return $this->studentID;
+    }
+}
+```
+### Encapsulation
+```sh
+<?php
+class Student extends Person
+{
+    private $name; // Encapsulation: private attribute
+    private $studentID;
+
+    public function __construct($name, $studentID)
+    {
+        $this->name = $name;
+        $this->studentID = $studentID;
+    }
+
+    // Setter untuk name
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // Getter untuk name
+    public function getName()
+    {
+        return "Student Name: " . $this->name;
+    }
+
+    // Setter untuk studentID
+    public function setStudentID($studentID)
+    {
+        $this->studentID = $studentID;
+    }
+
+    // Getter untuk studentID
+    public function getStudentID()
+    {
+        return $this->studentID;
+    }
+}
+```
+### Abstraction
+```sh
+<?php
+// Abstraction: Kelas abstrak Course dengan metode abstrak getCourseDetails()
+abstract class Course
+{
+    abstract public function getCourseDetails();
+}
+
+// Kelas OnlineCourse yang mengimplementasikan getCourseDetails()
+class OnlineCourse extends Course
+{
+    private $courseName;
+    private $platform;
+
+    public function __construct($courseName, $platform)
+    {
+        $this->courseName = $courseName;
+        $this->platform = $platform;
+    }
+
+    public function getCourseDetails()
+    {
+        return "Online Course: " . $this->courseName . " on " . $this->platform;
+    }
+}
+
+// Kelas OfflineCourse yang mengimplementasikan getCourseDetails()
+class OfflineCourse extends Course
+{
+    private $courseName;
+    private $location;
+
+    public function __construct($courseName, $location)
+    {
+        $this->courseName = $courseName;
+        $this->location = $location;
+    }
+
+    public function getCourseDetails()
+    {
+        return "Offline Course: " . $this->courseName . " at " . $this->location;
+    }
+}
+```
 ## Tugas
 ## 1-3
 ### Pembuatan Class Parent & Child
