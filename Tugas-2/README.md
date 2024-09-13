@@ -109,4 +109,48 @@ Class data adalah turunan dari class DB. Berikut penjelasannya
 
   **Cara diatas juga berlaku untuk data yang unfinished, hanya berbeda query saja**
 
+# Penjelasan Class `DB`
+
+Class `DB` dalam proyek ini adalah komponen yang bertanggung jawab untuk mengelola koneksi ke database MySQL dan menjalankan query SQL. Berikut adalah penjelasan mendetail tentang class `DB` yang terdapat dalam file `db.php`.
+
+## Struktur Class `DB`
+
+### 1. **Properti**
+- **`$conn`**: Properti ini menyimpan objek koneksi MySQLi yang digunakan untuk berinteraksi dengan database.
+
+### 2. **Konstruktor**
+
+#### `__construct()`
+```php
+public function __construct()
+{
+    $this->conn = new mysqli("localhost", "root", "", "libraries");
+
+    if ($this->conn->connect_error) {
+        die("Connection failed: " . $this->conn->connect_error);
+    }
+}
+```
+**Fungsi**: Konstruktor class DB dipanggil saat objek class ini dibuat. Fungsi utama dari konstruktor adalah untuk menginisialisasi koneksi ke database.
+**Koneksi Database**: Koneksi dibuat dengan menggunakan host localhost, username root, password kosong (default), dan nama database libraries.
+**Pengecekan Kesalahan**: Jika terjadi kesalahan saat mencoba menyambung ke database, pesan error akan ditampilkan dan eksekusi akan dihentikan menggunakan die().
+
+### Method
+```php
+public function query($sql)
+{
+    $result = $this->conn->query($sql);
+
+    if ($result === false) {
+        echo "Error: " . $this->conn->error;
+        return false;
+    }
+
+    return $result;
+}
+```
+***Fungsi***: Method ini digunakan untuk menjalankan query SQL yang diberikan dalam bentuk string.
+***Eksekusi Query***: Query dieksekusi menggunakan metode query() dari objek koneksi MySQLi.
+***Penanganan Kesalahan***: Jika terjadi kesalahan saat menjalankan query, pesan error ditampilkan, dan method ini mengembalikan false.
+***Pengembalian***: Jika query berhasil dieksekusi, hasilnya dikembalikan.
 
