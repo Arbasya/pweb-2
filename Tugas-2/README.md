@@ -32,33 +32,3 @@ File ini menampilkan semua jurnal yang telah selesai dengan melakukan query ke d
 
 ### 6. `unfinished.php`
 File ini menampilkan semua jurnal yang belum selesai dengan melakukan query ke database untuk jurnal yang belum diselesaikan. Sama seperti `finished.php`, file ini menggunakan kelas `DB` untuk mengambil dan menampilkan entri jurnal.
-
-## Instruksi Instalasi
-
-Untuk mengatur dan menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
-
-### 1. Prasyarat
-
-- **PHP**: Pastikan PHP telah terinstal di sistem Anda.
-- **MySQL**: Instal MySQL atau MariaDB untuk mengelola database.
-- **Web Server**: Gunakan Apache atau web server apa pun yang mendukung PHP (seperti XAMPP, LAMP, dll.).
-- **Bootstrap**: Proyek ini menggunakan Bootstrap untuk styling. Bootstrap CSS dan JS sudah termasuk dari CDN (di `header.php` dan `footer.php`).
-
-### 2. Pengaturan Database
-
-1. Buat database MySQL dengan nama `libraries`.
-2. Jalankan SQL berikut untuk membuat tabel `journals`:
-
-   ```sql
-   CREATE TABLE journals (
-       id INT AUTO_INCREMENT PRIMARY KEY,
-       attendance_list_id INT NOT NULL,
-       has_finished TINYINT(1) NOT NULL DEFAULT 0,
-       has_acc_head_department TINYINT(1) NOT NULL DEFAULT 0,
-       lecturer_id INT NOT NULL,
-       course_id INT NOT NULL,
-       student_class_id INT NOT NULL,
-       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-       deleted_at TIMESTAMP NULL DEFAULT NULL
-   );
