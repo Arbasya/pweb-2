@@ -32,3 +32,31 @@ File ini menampilkan semua jurnal yang telah selesai dengan melakukan query ke d
 
 ### 6. `unfinished.php`
 File ini menampilkan semua jurnal yang belum selesai dengan melakukan query ke database untuk jurnal yang belum diselesaikan. Sama seperti `finished.php`, file ini menggunakan kelas `DB` untuk mengambil dan menampilkan entri jurnal.
+
+
+##Penjelasan Class Data
+-`finished.php` adalah sebuah file yang berisi oop php untuk data yang sudah selesai, berikut penjelasannya.
+- **Mempersiapkan Query**:
+  ```php
+  $sql = "SELECT * FROM journals WHERE has_finished = 1";
+  $stmt = $this->conn->prepare($sql);
+  ```
+  Method ini menggunakan query SQL untuk memilih semua data dari tabel journals di mana kolom has_finished bernilai 1.
+-**Cek Kesalahan**
+  ```php
+  if (!$stmt) {
+    die("Error in prepare statement: " . $this->conn->error);}
+  ```
+  -**Eksekusi query**
+  ```php
+  $stmt->execute();
+  ```
+  Jika tidak ada kesalahan, query SQL akan dieksekusi untuk mengambil data dari database.
+
+  -**Mengambil Hasil**
+  ```php
+  $result = $stmt->get_result();
+  ```
+ Hasil query yang dieksekusi akan disimpan dalam variabel $result.
+
+
