@@ -42,18 +42,18 @@ File ini menampilkan semua jurnal yang belum selesai dengan melakukan query ke d
   $stmt = $this->conn->prepare($sql);
   ```
   Method ini menggunakan query SQL untuk memilih semua data dari tabel journals di mana kolom has_finished bernilai 1.
--**Cek Kesalahan**
+- **Cek Kesalahan**
   ```php
   if (!$stmt) {
     die("Error in prepare statement: " . $this->conn->error);}
   ```
-  -**Eksekusi query**
+  - **Eksekusi query**
   ```php
   $stmt->execute();
   ```
   Jika tidak ada kesalahan, query SQL akan dieksekusi untuk mengambil data dari database.
 
-  -**Mengambil Hasil**
+  - **Mengambil Hasil**
   ```php
   $result = $stmt->get_result();
   ```
