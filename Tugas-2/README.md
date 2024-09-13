@@ -34,7 +34,7 @@ File ini menampilkan semua jurnal yang telah selesai dengan melakukan query ke d
 File ini menampilkan semua jurnal yang belum selesai dengan melakukan query ke database untuk jurnal yang belum diselesaikan. Sama seperti `finished.php`, file ini menggunakan kelas `DB` untuk mengambil dan menampilkan entri jurnal.
 
 
-##Penjelasan Class Data
+## Penjelasan Class Data
 -`finished.php` adalah sebuah file yang berisi oop php untuk data yang sudah selesai, berikut penjelasannya.
 - **Mempersiapkan Query**:
   ```php
