@@ -154,3 +154,10 @@ public function query($sql)
 ***Penanganan Kesalahan***: Jika terjadi kesalahan saat menjalankan query, pesan error ditampilkan, dan method ini mengembalikan false.
 ***Pengembalian***: Jika query berhasil dieksekusi, hasilnya dikembalikan.
 
+# Output
+![Index](https://github.com/Arbasya/pweb-2/blob/main/Tugas-2/Output%20Tugas%202/index.png?raw=true)
+![Finished Data](https://github.com/Arbasya/pweb-2/blob/main/Tugas-2/Output%20Tugas%202/finished-1.png?raw=true)
+![Finished Data-2](https://github.com/Arbasya/pweb-2/blob/main/Tugas-2/Output%20Tugas%202/finished-2.png?raw=true)
+![Unfinished Data](https://github.com/Arbasya/pweb-2/blob/main/Tugas-2/Output%20Tugas%202/unfinished.png?raw=true)
+![Unfinished Data-2](https://github.com/Arbasya/pweb-2/blob/main/Tugas-2/Output%20Tugas%202/unfinished-2.png?raw=true)
+
