@@ -35,7 +35,7 @@ File ini menampilkan semua jurnal yang belum selesai dengan melakukan query ke d
 
 
 ## Penjelasan Class Data
--`finished.php` adalah sebuah file yang berisi oop php untuk data yang sudah selesai, berikut penjelasannya.
+Class data adalah turunan dari class DB. Berikut penjelasannya
 - **Mempersiapkan Query**:
   ```php
   $sql = "SELECT * FROM journals WHERE has_finished = 1";
